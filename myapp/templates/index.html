@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+<br>
+<center><h1>List of users</h1></center>
+<br>
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Telegram ID</th>
+        <th scope="col">Fullname</th>
+        <th scope="col">Username</th>
+        <th scope="col">Language</th>
+    </tr>
+    </thead>
+    {% for tguser in tgusers %}
+    <tbody>
+    <tr>
+    <tr class="table-light">
+
+        <th scope="row">{{ tguser.id }}</th>
+        <td>{{ tguser.tg_id }}</td>
+        {% if tgusers.fullname %}
+        <td>{{ tguser.fullname }}</td>
+        {% else %}
+        <td>None</td>
+        {% endif %}
+        <td>@{{ tguser.username }}</td>
+        <td>{{ tguser.language }}</td>
+
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+</body>
+</html>
+<center><p style="font-size: 15px;">an Abdullo production<br>The List Telegram Users &copy; 2024</p></center>
