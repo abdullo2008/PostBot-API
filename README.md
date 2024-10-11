@@ -1,5 +1,6 @@
 # PostBot API
-### About 
+### About
+Status: Finished
 For Bot: aiogram
 For Website: Django
 For API: Django Rest Framework
